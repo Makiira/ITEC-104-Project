@@ -13,5 +13,6 @@ namespace ITEC_104_Project
             ApplicationConfiguration.Initialize();
             Application.Run(new splashScreen());
         }
+
     }
 }

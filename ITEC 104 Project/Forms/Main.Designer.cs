@@ -132,8 +132,8 @@
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(187, 67);
             iconButton2.TabIndex = 2;
-            iconButton2.Tag = "Manage";
-            iconButton2.Text = "  Manage";
+            iconButton2.Tag = "Projects";
+            iconButton2.Text = "   Projects";
             iconButton2.TextAlign = ContentAlignment.MiddleLeft;
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton2.UseVisualStyleBackColor = true;
@@ -210,6 +210,7 @@
             // 
             toolStrip1.AutoSize = false;
             toolStrip1.BackColor = Color.Transparent;
+            toolStrip1.BackgroundImageLayout = ImageLayout.None;
             toolStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnExit, toolStripSeparator1, toolStripButton2, toolStripSeparator2, toolStripButton3 });
