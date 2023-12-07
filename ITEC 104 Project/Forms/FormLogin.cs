@@ -60,7 +60,14 @@ namespace ITEC_104_Project
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
-            
+            RegistrationForm rf = new RegistrationForm();
+            rf.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

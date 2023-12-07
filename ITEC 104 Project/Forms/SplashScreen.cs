@@ -28,6 +28,11 @@ namespace ITEC_104_Project
             timer1.Start();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         private void timer1_Tick_1(object sender, EventArgs e)
         {

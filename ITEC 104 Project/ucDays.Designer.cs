@@ -1,6 +1,6 @@
-﻿namespace ITEC_104_Project.Controls
+﻿namespace ITEC_104_Project
 {
-    partial class Control2
+    partial class ucDays
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lbDays = new Label();
             SuspendLayout();
             // 
-            // Control2
+            // lbDays
+            // 
+            lbDays.AutoSize = true;
+            lbDays.Location = new Point(3, 9);
+            lbDays.Name = "lbDays";
+            lbDays.Size = new Size(19, 15);
+            lbDays.TabIndex = 1;
+            lbDays.Text = "00";
+            // 
+            // ucDays
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(241, 234, 220);
-            Name = "Control2";
-            Size = new Size(911, 602);
+            Controls.Add(lbDays);
+            Name = "ucDays";
+            Size = new Size(89, 95);
+            Load += ucDays_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lbDays;
     }
 }

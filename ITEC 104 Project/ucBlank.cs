@@ -1,5 +1,4 @@
-﻿using Krypton.Toolkit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ITEC_104_Project
 {
-    public partial class RegistrationForm : KryptonForm
+    public partial class ucBlank : UserControl
     {
-        public RegistrationForm()
+        public ucBlank()
         {
             InitializeComponent();
         }

@@ -40,26 +40,18 @@
             menuButton = new FontAwesome.Sharp.IconButton();
             kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             panel1 = new Panel();
-            kryptonToolStrip1 = new Krypton.Toolkit.KryptonToolStrip();
+            toolStrip1 = new ToolStrip();
             btnExit = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            btnMaximize = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            btnMinimize = new ToolStripButton();
+            toolStripButton3 = new ToolStripButton();
             mainPanel = new Panel();
-            panel7 = new Panel();
-            panel6 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
             Menu.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonPictureBox1).BeginInit();
             panel1.SuspendLayout();
-            kryptonToolStrip1.SuspendLayout();
-            mainPanel.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // PaLetteMain
@@ -72,7 +64,7 @@
             // 
             // Menu
             // 
-            Menu.BackColor = Color.FromArgb(44, 64, 89);
+            Menu.BackColor = Color.FromArgb(28, 41, 70);
             Menu.Controls.Add(iconButton4);
             Menu.Controls.Add(iconButton3);
             Menu.Controls.Add(iconButton2);
@@ -81,7 +73,7 @@
             Menu.Dock = DockStyle.Left;
             Menu.Location = new Point(0, 0);
             Menu.Name = "Menu";
-            Menu.Size = new Size(187, 628);
+            Menu.Size = new Size(187, 677);
             Menu.TabIndex = 0;
             // 
             // iconButton4
@@ -110,7 +102,7 @@
             iconButton3.Dock = DockStyle.Top;
             iconButton3.FlatAppearance.BorderSize = 0;
             iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            iconButton3.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point);
             iconButton3.ForeColor = SystemColors.ControlLightLight;
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             iconButton3.IconColor = Color.White;
@@ -119,8 +111,8 @@
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(187, 67);
             iconButton3.TabIndex = 3;
-            iconButton3.Tag = "Button3";
-            iconButton3.Text = "   HOME";
+            iconButton3.Tag = " Calendar";
+            iconButton3.Text = "   Calendar";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = true;
@@ -140,8 +132,8 @@
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(187, 67);
             iconButton2.TabIndex = 2;
-            iconButton2.Tag = "Button1";
-            iconButton2.Text = "   HOME";
+            iconButton2.Tag = "Manage";
+            iconButton2.Text = "  Manage";
             iconButton2.TextAlign = ContentAlignment.MiddleLeft;
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton2.UseVisualStyleBackColor = true;
@@ -162,7 +154,7 @@
             iconButton1.Size = new Size(187, 67);
             iconButton1.TabIndex = 1;
             iconButton1.Tag = "Home";
-            iconButton1.Text = "   HOME";
+            iconButton1.Text = "   Home";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
@@ -198,7 +190,7 @@
             // 
             // kryptonPictureBox1
             // 
-            kryptonPictureBox1.Location = new Point(25, 54);
+            kryptonPictureBox1.Location = new Point(24, 43);
             kryptonPictureBox1.Name = "kryptonPictureBox1";
             kryptonPictureBox1.Size = new Size(66, 62);
             kryptonPictureBox1.TabIndex = 2;
@@ -206,24 +198,27 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 121, 196);
-            panel1.Controls.Add(kryptonToolStrip1);
+            panel1.BackColor = Color.FromArgb(85, 124, 211);
+            panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(187, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(859, 75);
+            panel1.Size = new Size(911, 75);
             panel1.TabIndex = 1;
             // 
-            // kryptonToolStrip1
+            // toolStrip1
             // 
-            kryptonToolStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            kryptonToolStrip1.Items.AddRange(new ToolStripItem[] { btnExit, toolStripSeparator1, btnMaximize, toolStripSeparator2, btnMinimize });
-            kryptonToolStrip1.Location = new Point(0, 0);
-            kryptonToolStrip1.Name = "kryptonToolStrip1";
-            kryptonToolStrip1.RightToLeft = RightToLeft.Yes;
-            kryptonToolStrip1.Size = new Size(859, 25);
-            kryptonToolStrip1.TabIndex = 1;
-            kryptonToolStrip1.Text = "kryptonToolStrip1";
+            toolStrip1.AutoSize = false;
+            toolStrip1.BackColor = Color.Transparent;
+            toolStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnExit, toolStripSeparator1, toolStripButton2, toolStripSeparator2, toolStripButton3 });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.RenderMode = ToolStripRenderMode.System;
+            toolStrip1.RightToLeft = RightToLeft.Yes;
+            toolStrip1.Size = new Size(911, 33);
+            toolStrip1.TabIndex = 0;
             // 
             // btnExit
             // 
@@ -231,95 +226,51 @@
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
             btnExit.ImageTransparentColor = Color.Magenta;
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(23, 22);
+            btnExit.Size = new Size(23, 30);
             btnExit.Text = "toolStripButton1";
             btnExit.Click += btnExit_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 25);
+            toolStripSeparator1.Size = new Size(6, 33);
             // 
-            // btnMaximize
+            // toolStripButton2
             // 
-            btnMaximize.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnMaximize.Image = (Image)resources.GetObject("btnMaximize.Image");
-            btnMaximize.ImageTransparentColor = Color.Magenta;
-            btnMaximize.Name = "btnMaximize";
-            btnMaximize.Size = new Size(23, 22);
-            btnMaximize.Text = "toolStripButton2";
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(23, 30);
+            toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 25);
+            toolStripSeparator2.Size = new Size(6, 33);
             // 
-            // btnMinimize
+            // toolStripButton3
             // 
-            btnMinimize.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnMinimize.Image = (Image)resources.GetObject("btnMinimize.Image");
-            btnMinimize.ImageTransparentColor = Color.Magenta;
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(23, 22);
-            btnMinimize.Text = "toolStripButton3";
-            btnMinimize.Click += btnMinimize_Click;
+            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
+            toolStripButton3.ImageTransparentColor = Color.Magenta;
+            toolStripButton3.Name = "toolStripButton3";
+            toolStripButton3.Size = new Size(23, 30);
+            toolStripButton3.Text = "toolStripButton3";
             // 
             // mainPanel
             // 
-            mainPanel.Controls.Add(panel7);
-            mainPanel.Controls.Add(panel6);
-            mainPanel.Controls.Add(panel3);
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(187, 75);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(859, 553);
+            mainPanel.Size = new Size(911, 602);
             mainPanel.TabIndex = 2;
-            // 
-            // panel7
-            // 
-            panel7.Location = new Point(601, 15);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(246, 438);
-            panel7.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(6, 6);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(572, 189);
-            panel6.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel4);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 470);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(859, 83);
-            panel3.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(panel5);
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(859, 83);
-            panel4.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(859, 83);
-            panel5.TabIndex = 1;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1046, 628);
+            ClientSize = new Size(1098, 677);
             Controls.Add(mainPanel);
             Controls.Add(panel1);
             Controls.Add(Menu);
@@ -335,12 +286,8 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)kryptonPictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            kryptonToolStrip1.ResumeLayout(false);
-            kryptonToolStrip1.PerformLayout();
-            mainPanel.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -355,18 +302,13 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private Krypton.Toolkit.KryptonToolStrip kryptonToolStrip1;
-        private ToolStripButton btnExit;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton btnMaximize;
-        private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton btnMinimize;
         private FontAwesome.Sharp.IconButton menuButton;
         private Panel mainPanel;
-        private Panel panel7;
-        private Panel panel6;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnExit;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton toolStripButton3;
     }
 }

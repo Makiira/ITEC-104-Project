@@ -1,6 +1,6 @@
-﻿namespace ITEC_104_Project.Controls
+﻿namespace ITEC_104_Project
 {
-    partial class Control2
+    partial class ucBlank
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,13 +30,12 @@
         {
             SuspendLayout();
             // 
-            // Control2
+            // ucBlank
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(241, 234, 220);
-            Name = "Control2";
-            Size = new Size(911, 602);
+            Name = "ucBlank";
+            Size = new Size(89, 95);
             ResumeLayout(false);
         }
 

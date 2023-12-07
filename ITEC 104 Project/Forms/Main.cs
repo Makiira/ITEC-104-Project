@@ -31,29 +31,6 @@ namespace ITEC_104_Project
             mainPanel.Controls.Add(MainDashboard);
             MainDashboard.Dock = DockStyle.Fill;
         }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void menuButton_Click(object sender, EventArgs e)
         {
             CollapseMenu();
@@ -111,6 +88,11 @@ namespace ITEC_104_Project
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(Dashboard4);
             Dashboard4.Dock = DockStyle.Fill;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
