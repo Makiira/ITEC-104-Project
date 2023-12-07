@@ -1,4 +1,5 @@
 using Krypton.Toolkit;
+using System.Data.SqlClient;
 namespace ITEC_104_Project
 {
     public partial class splashScreen : KryptonForm

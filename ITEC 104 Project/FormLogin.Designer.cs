@@ -41,8 +41,9 @@
             label2 = new Label();
             emailTxtBox = new Krypton.Toolkit.KryptonTextBox();
             loginButton1 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            signUpButton = new Krypton.Toolkit.KryptonButton();
             panel1 = new Panel();
+            passTxtBox = new Krypton.Toolkit.KryptonTextBox();
             kryptonToolStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -89,7 +90,6 @@
             btnMaximize.Name = "btnMaximize";
             btnMaximize.Size = new Size(23, 22);
             btnMaximize.Text = "toolStripButton2";
-            btnMaximize.Click += btnMaximize_Click;
             // 
             // toolStripSeparator2
             // 
@@ -133,10 +133,11 @@
             emailTxtBox.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             emailTxtBox.StateActive.Border.Rounding = 12F;
             emailTxtBox.TabIndex = 3;
+            emailTxtBox.Text = "EMAIL";
             // 
             // loginButton1
             // 
-            loginButton1.Location = new Point(32, 331);
+            loginButton1.Location = new Point(32, 348);
             loginButton1.Name = "loginButton1";
             loginButton1.Size = new Size(179, 54);
             loginButton1.StateCommon.Back.Color1 = Color.DodgerBlue;
@@ -146,17 +147,16 @@
             loginButton1.TabIndex = 4;
             loginButton1.Values.Text = "GET STARTED";
             loginButton1.Click += loginButton1_Click;
-            loginButton1.KeyPress += loginButton1_KeyPress;
             // 
-            // kryptonButton1
+            // signUpButton
             // 
-            kryptonButton1.Location = new Point(262, 331);
-            kryptonButton1.Name = "kryptonButton1";
-            kryptonButton1.Size = new Size(180, 54);
-            kryptonButton1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.StateCommon.Border.Rounding = 12F;
-            kryptonButton1.TabIndex = 5;
-            kryptonButton1.Values.Text = "GET STARTED";
+            signUpButton.Location = new Point(262, 348);
+            signUpButton.Name = "signUpButton";
+            signUpButton.Size = new Size(180, 54);
+            signUpButton.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            signUpButton.StateCommon.Border.Rounding = 12F;
+            signUpButton.TabIndex = 5;
+            signUpButton.Values.Text = "GET STARTED";
             // 
             // panel1
             // 
@@ -167,14 +167,25 @@
             panel1.Size = new Size(329, 425);
             panel1.TabIndex = 6;
             // 
+            // passTxtBox
+            // 
+            passTxtBox.Location = new Point(32, 300);
+            passTxtBox.Name = "passTxtBox";
+            passTxtBox.Size = new Size(179, 31);
+            passTxtBox.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            passTxtBox.StateActive.Border.Rounding = 12F;
+            passTxtBox.TabIndex = 7;
+            passTxtBox.Text = "PASSWORD";
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 255);
             ClientSize = new Size(800, 450);
+            Controls.Add(passTxtBox);
             Controls.Add(panel1);
-            Controls.Add(kryptonButton1);
+            Controls.Add(signUpButton);
             Controls.Add(loginButton1);
             Controls.Add(emailTxtBox);
             Controls.Add(label2);
@@ -207,7 +218,8 @@
         private Label label2;
         private Krypton.Toolkit.KryptonTextBox emailTxtBox;
         private Krypton.Toolkit.KryptonButton loginButton1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton signUpButton;
         private Panel panel1;
+        private Krypton.Toolkit.KryptonTextBox passTxtBox;
     }
 }
