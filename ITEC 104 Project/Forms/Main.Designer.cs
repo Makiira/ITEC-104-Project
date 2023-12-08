@@ -279,6 +279,7 @@
             Name = "Main";
             Palette = PaLetteMain;
             PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
+            StartPosition = FormStartPosition.CenterScreen;
             StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             StateActive.Border.Rounding = 12F;
             Text = "Main";

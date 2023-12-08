@@ -64,30 +64,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Poppins", 23F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(28, 68);
+            label1.Location = new Point(24, 29);
             label1.Name = "label1";
-            label1.Size = new Size(262, 36);
+            label1.Size = new Size(406, 54);
             label1.TabIndex = 1;
             label1.Text = "WELCOME TO TASK TUNE";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Poppins ExtraLight", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Poppins ExtraLight", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(28, 117);
+            label2.Location = new Point(24, 92);
             label2.Name = "label2";
-            label2.Size = new Size(451, 104);
+            label2.Size = new Size(498, 112);
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
             // 
             // emailTxtBox
             // 
-            emailTxtBox.Location = new Point(38, 261);
+            emailTxtBox.Location = new Point(28, 252);
             emailTxtBox.Name = "emailTxtBox";
-            emailTxtBox.Size = new Size(396, 31);
+            emailTxtBox.Size = new Size(262, 31);
             emailTxtBox.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             emailTxtBox.StateActive.Border.Rounding = 12F;
             emailTxtBox.TabIndex = 3;
@@ -97,7 +97,7 @@
             loginButton1.Location = new Point(24, 379);
             loginButton1.Name = "loginButton1";
             loginButton1.Size = new Size(179, 54);
-            loginButton1.StateCommon.Back.Color1 = Color.DodgerBlue;
+            loginButton1.StateCommon.Back.Color1 = Color.Blue;
             loginButton1.StateCommon.Back.Color2 = Color.Cyan;
             loginButton1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             loginButton1.StateCommon.Border.Rounding = 12F;
@@ -110,9 +110,9 @@
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(85, 124, 211);
             panel1.Controls.Add(kryptonToolStrip1);
-            panel1.Location = new Point(485, 0);
+            panel1.Location = new Point(528, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(333, 469);
+            panel1.Size = new Size(290, 469);
             panel1.TabIndex = 6;
             // 
             // kryptonToolStrip1
@@ -126,7 +126,7 @@
             kryptonToolStrip1.Name = "kryptonToolStrip1";
             kryptonToolStrip1.RenderMode = ToolStripRenderMode.System;
             kryptonToolStrip1.RightToLeft = RightToLeft.Yes;
-            kryptonToolStrip1.Size = new Size(333, 28);
+            kryptonToolStrip1.Size = new Size(290, 28);
             kryptonToolStrip1.Stretch = true;
             kryptonToolStrip1.TabIndex = 0;
             // 
@@ -170,19 +170,19 @@
             // 
             // passTxtBox
             // 
-            passTxtBox.Location = new Point(38, 326);
+            passTxtBox.Location = new Point(28, 326);
             passTxtBox.Name = "passTxtBox";
-            passTxtBox.Size = new Size(179, 31);
+            passTxtBox.Size = new Size(262, 31);
             passTxtBox.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             passTxtBox.StateActive.Border.Rounding = 12F;
             passTxtBox.TabIndex = 7;
             // 
             // signUpButton
             // 
-            signUpButton.Location = new Point(255, 379);
+            signUpButton.Location = new Point(251, 379);
             signUpButton.Name = "signUpButton";
             signUpButton.Size = new Size(179, 54);
-            signUpButton.StateCommon.Back.Color1 = Color.DodgerBlue;
+            signUpButton.StateCommon.Back.Color1 = Color.Blue;
             signUpButton.StateCommon.Back.Color2 = Color.Cyan;
             signUpButton.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             signUpButton.StateCommon.Border.Rounding = 12F;
@@ -193,22 +193,22 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Poppins", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Poppins", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(28, 239);
+            label3.Location = new Point(28, 221);
             label3.Name = "label3";
-            label3.Size = new Size(68, 19);
+            label3.Size = new Size(98, 28);
             label3.TabIndex = 9;
             label3.Text = "Username";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Poppins", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Poppins", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(28, 304);
+            label4.Location = new Point(28, 295);
             label4.Name = "label4";
-            label4.Size = new Size(64, 19);
+            label4.Size = new Size(93, 28);
             label4.TabIndex = 10;
             label4.Text = "Password";
             // 
@@ -231,6 +231,7 @@
             Name = "FormLogin";
             Palette = FormLoginPalette;
             PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
+            StartPosition = FormStartPosition.CenterScreen;
             StateActive.Back.Color1 = Color.FromArgb(192, 255, 255);
             StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             StateActive.Border.Rounding = 24F;
