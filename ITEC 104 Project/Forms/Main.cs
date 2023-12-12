@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Krypton.Toolkit;
 using System.Data.SqlClient;
+using ITEC_104_Project.Forms;
 
 namespace ITEC_104_Project
 {
@@ -19,10 +20,11 @@ namespace ITEC_104_Project
         Controls.Control3 Dashboard3 = new Controls.Control3();
         Controls.Control4 Dashboard4 = new Controls.Control4();
 
+
         public Main()
         {
             InitializeComponent();
-            CollapseMenu();
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -31,35 +33,7 @@ namespace ITEC_104_Project
             mainPanel.Controls.Add(MainDashboard);
             MainDashboard.Dock = DockStyle.Fill;
         }
-        private void menuButton_Click(object sender, EventArgs e)
-        {
-            CollapseMenu();
-        }
-        private void CollapseMenu()
-        {
-            if (this.Menu.Width > 200)
-            {
-                Menu.Width = 100;
-                menuButton.Dock = DockStyle.Top;
-                foreach (Button menuButton in Menu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding();
-                }
-            }
-            else
-            {
-                Menu.Width = 230;
-                menuButton.Dock = DockStyle.None;
-                foreach (Button menuButton in Menu.Controls.OfType<Button>())
-                {
-                    menuButton.Text = "    " + menuButton.Tag.ToString();
-                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(10, 0, 0, 0);
-                }
-            }
-        }
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -93,6 +67,17 @@ namespace ITEC_104_Project
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            aboutUs developers = new aboutUs();
+            developers.Show();
         }
     }
 }

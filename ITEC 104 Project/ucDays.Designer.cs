@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             lbDays = new Label();
+            nameLabel = new Label();
             SuspendLayout();
             // 
             // lbDays
@@ -40,14 +41,25 @@
             lbDays.TabIndex = 1;
             lbDays.Text = "00";
             // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(3, 69);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(17, 15);
+            nameLabel.TabIndex = 2;
+            nameLabel.Text = "\"\"";
+            // 
             // ucDays
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(nameLabel);
             Controls.Add(lbDays);
             Name = "ucDays";
             Size = new Size(89, 95);
             Load += ucDays_Load;
+            Click += ucDays_Click;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -55,5 +67,6 @@
         #endregion
 
         private Label lbDays;
+        private Label nameLabel;
     }
 }

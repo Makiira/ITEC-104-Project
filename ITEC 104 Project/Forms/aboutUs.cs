@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ITEC_104_Project
+namespace ITEC_104_Project.Forms
 {
-    public partial class ucTask : UserControl
+    public partial class aboutUs : Form
     {
-        public ucTask()
+        public aboutUs()
         {
             InitializeComponent();
         }
