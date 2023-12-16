@@ -15,12 +15,8 @@ namespace ITEC_104_Project
 {
     public partial class Main : KryptonForm
     {
-        Controls.Control1 MainDashboard = new Controls.Control1();
-        Controls.Control2 Dashboard2 = new Controls.Control2();
-        Controls.Control3 Dashboard3 = new Controls.Control3();
-        Controls.Control4 Dashboard4 = new Controls.Control4();
-
-
+        Controls.ucProject Dashboard2 = new Controls.ucProject();
+        Controls.ucCalendar Dashboard3 = new Controls.ucCalendar();
         public Main()
         {
             InitializeComponent();
@@ -30,19 +26,9 @@ namespace ITEC_104_Project
         private void Main_Load(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(MainDashboard);
-            MainDashboard.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(Dashboard2);
+            Dashboard2.Dock = DockStyle.Fill;
         }
-
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(MainDashboard);
-            MainDashboard.Dock = DockStyle.Fill;
-
-        }
-
         private void iconButton2_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
@@ -56,14 +42,6 @@ namespace ITEC_104_Project
             mainPanel.Controls.Add(Dashboard3);
             Dashboard3.Dock = DockStyle.Fill;
         }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(Dashboard4);
-            Dashboard4.Dock = DockStyle.Fill;
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

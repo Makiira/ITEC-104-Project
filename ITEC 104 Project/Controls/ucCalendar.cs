@@ -6,21 +6,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace ITEC_104_Project.Controls
 {
-    public partial class Control1 : UserControl
+    public partial class ucCalendar : UserControl
     {
+
         Calendar cal = new Calendar();
-        public Control1()
+        public ucCalendar()
         {
             InitializeComponent();
         }
-        private void Control1_Load(object sender, EventArgs e)
+
+        private void Control3_Load(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(cal);
+            panel2.Controls.Clear();
+            panel2.Controls.Add(cal);
+            panel2.Dock = DockStyle.Fill;
         }
     }
 }

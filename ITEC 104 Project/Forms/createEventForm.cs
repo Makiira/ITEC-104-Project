@@ -9,7 +9,9 @@ namespace ITEC_104_Project.Forms
 
         public createEventForm()
         {
+
             InitializeComponent();
+
         }
 
         private void addBTN_Click(object sender, EventArgs e)
@@ -21,6 +23,11 @@ namespace ITEC_104_Project.Forms
 
             // Close the form
             this.Close();
+        }
+
+        private void eventTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

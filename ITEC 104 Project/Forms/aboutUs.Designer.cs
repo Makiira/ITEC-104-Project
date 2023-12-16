@@ -80,7 +80,6 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "aboutUs";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "aboutUs";
             ResumeLayout(false);
             PerformLayout();
         }

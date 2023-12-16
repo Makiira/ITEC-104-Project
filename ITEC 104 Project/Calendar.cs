@@ -130,5 +130,14 @@ namespace ITEC_104_Project
             ucd.DisplayEventText(eventText);
             daycontainer.Controls.Add(ucd);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }

@@ -34,7 +34,6 @@
             Menu = new Panel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             panel1 = new Panel();
@@ -60,7 +59,6 @@
             Menu.BackColor = Color.FromArgb(28, 41, 70);
             Menu.Controls.Add(iconButton3);
             Menu.Controls.Add(iconButton2);
-            Menu.Controls.Add(iconButton1);
             Menu.Controls.Add(panel2);
             Menu.Dock = DockStyle.Left;
             Menu.Location = new Point(0, 0);
@@ -78,7 +76,7 @@
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             iconButton3.IconColor = Color.White;
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.Location = new Point(0, 270);
+            iconButton3.Location = new Point(0, 203);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(187, 67);
             iconButton3.TabIndex = 3;
@@ -99,7 +97,7 @@
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             iconButton2.IconColor = Color.White;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(0, 203);
+            iconButton2.Location = new Point(0, 136);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(187, 67);
             iconButton2.TabIndex = 2;
@@ -109,27 +107,6 @@
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton2.UseVisualStyleBackColor = true;
             iconButton2.Click += iconButton2_Click;
-            // 
-            // iconButton1
-            // 
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = SystemColors.ControlLightLight;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(0, 136);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(187, 67);
-            iconButton1.TabIndex = 1;
-            iconButton1.Tag = "Home";
-            iconButton1.Text = "   Home";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
             // 
             // panel2
             // 
@@ -167,7 +144,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(772, 0);
+            button1.Location = new Point(757, 3);
             button1.Name = "button1";
             button1.Size = new Size(108, 25);
             button1.TabIndex = 0;
@@ -233,7 +210,6 @@
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private Panel mainPanel;
         private FontAwesome.Sharp.IconButton iconButton5;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;

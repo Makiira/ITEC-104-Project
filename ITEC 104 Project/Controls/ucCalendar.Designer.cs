@@ -1,6 +1,6 @@
 ﻿namespace ITEC_104_Project.Controls
 {
-    partial class Control3
+    partial class ucCalendar
     {
         /// <summary> 
         /// Required designer variable.

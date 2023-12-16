@@ -1,6 +1,6 @@
 ﻿namespace ITEC_104_Project.Controls
 {
-    public partial class Control2
+    public partial class ucProject
     {
         /// <summary> 
         /// Required designer variable.

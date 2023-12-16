@@ -35,20 +35,21 @@
             // lbDays
             // 
             lbDays.AutoSize = true;
+            lbDays.Font = new Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbDays.Location = new Point(3, 9);
             lbDays.Name = "lbDays";
-            lbDays.Size = new Size(19, 15);
+            lbDays.Size = new Size(23, 16);
             lbDays.TabIndex = 1;
             lbDays.Text = "00";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
+            nameLabel.Font = new Font("Century", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nameLabel.Location = new Point(3, 69);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(17, 15);
+            nameLabel.Size = new Size(0, 16);
             nameLabel.TabIndex = 2;
-            nameLabel.Text = "\"\"";
             // 
             // ucDays
             // 
@@ -57,7 +58,7 @@
             Controls.Add(nameLabel);
             Controls.Add(lbDays);
             Name = "ucDays";
-            Size = new Size(89, 95);
+            Size = new Size(108, 83);
             Load += ucDays_Load;
             Click += ucDays_Click;
             ResumeLayout(false);

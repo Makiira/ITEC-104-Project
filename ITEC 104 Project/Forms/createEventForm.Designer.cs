@@ -36,27 +36,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 36);
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(12, 40);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(63, 19);
             label1.TabIndex = 0;
             label1.Text = "EVENT: ";
             // 
             // eventTextBox
             // 
             eventTextBox.AcceptsReturn = true;
-            eventTextBox.Location = new Point(89, 33);
+            eventTextBox.Location = new Point(78, 40);
             eventTextBox.Name = "eventTextBox";
-            eventTextBox.Size = new Size(210, 23);
+            eventTextBox.Size = new Size(185, 23);
             eventTextBox.TabIndex = 1;
+            eventTextBox.TextChanged += eventTextBox_TextChanged;
             // 
             // addBTN
             // 
-            addBTN.Location = new Point(25, 154);
+            addBTN.Location = new Point(78, 81);
             addBTN.Name = "addBTN";
             addBTN.Size = new Size(136, 29);
             addBTN.TabIndex = 2;
-            addBTN.Text = "button1";
+            addBTN.Text = "Add Event";
             addBTN.UseVisualStyleBackColor = true;
             addBTN.Click += addBTN_Click;
             // 
@@ -64,12 +67,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 226);
+            BackColor = Color.FromArgb(28, 41, 70);
+            ClientSize = new Size(275, 146);
             Controls.Add(addBTN);
             Controls.Add(eventTextBox);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "createEventForm";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -7,7 +7,7 @@ using Krypton.Toolkit;
 
 namespace ITEC_104_Project.Controls
 {
-    public partial class Control2 : UserControl
+    public partial class ucProject : UserControl
     {
         private DataTable DataTaskTable;
         private bool isFormatting = false;
@@ -18,7 +18,7 @@ namespace ITEC_104_Project.Controls
             set { DataTaskTable = value; }
         }
 
-        public Control2()
+        public ucProject()
         {
             InitializeComponent();
             data.CellFormatting += data_CellFormatting;
@@ -76,9 +76,7 @@ namespace ITEC_104_Project.Controls
             {
                 return;
             }
-
             isFormatting = true;
-
             try
             {
                 DataGridViewTextBoxColumn daysPassedColumn = data.Columns["Days Passed"] as DataGridViewTextBoxColumn;
@@ -199,15 +197,11 @@ namespace ITEC_104_Project.Controls
                     .CopyToDataTable();
 
                 data.DataSource = filteredRows;
-
-                // Add a debug statement to check if the DataSource was set correctly
                 Console.WriteLine("DataSource set to filtered rows.");
             }
             else
             {
                 data.DataSource = taskDataTable;
-
-                // Add a debug statement to check if the DataSource was set to the original data
                 Console.WriteLine("DataSource set to original data.");
             }
         }
