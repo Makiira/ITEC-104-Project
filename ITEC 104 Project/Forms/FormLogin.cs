@@ -9,10 +9,7 @@ namespace ITEC_104_Project
     public partial class FormLogin : KryptonForm
     {
 
-        public FormLogin()
-        {
-            InitializeComponent();
-        }
+        public FormLogin() => InitializeComponent();
 
         private void loginButton1_Click(object sender, EventArgs e)
         {

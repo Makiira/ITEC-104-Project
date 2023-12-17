@@ -55,22 +55,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 23F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 23.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(24, 46);
+            label1.Location = new Point(24, 65);
             label1.Name = "label1";
-            label1.Size = new Size(406, 54);
+            label1.Size = new Size(378, 37);
             label1.TabIndex = 1;
             label1.Text = "WELCOME TO TASK TUNE";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Poppins ExtraLight", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Century Schoolbook", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(24, 120);
+            label2.Location = new Point(24, 135);
             label2.Name = "label2";
-            label2.Size = new Size(372, 130);
+            label2.Size = new Size(364, 90);
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
             // 

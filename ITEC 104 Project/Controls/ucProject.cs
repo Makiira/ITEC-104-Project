@@ -1,38 +1,39 @@
-﻿using ITEC_104_Project.Forms;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
+using ITEC_104_Project.Forms;
 using Krypton.Toolkit;
 
 namespace ITEC_104_Project.Controls
 {
     public partial class ucProject : UserControl
     {
-        private DataTable DataTaskTable;
+        private const string ColumnName = "Title";
+        private List<Dictionary<string, object>> tasksList;
+        private DataTable taskDataTable = new DataTable();
         private bool isFormatting = false;
-
-        public DataTable taskDataTable
-        {
-            get { return DataTaskTable; }
-            set { DataTaskTable = value; }
-        }
 
         public ucProject()
         {
             InitializeComponent();
             data.CellFormatting += data_CellFormatting;
 
-            taskDataTable = new DataTable();
+            tasksList = new List<Dictionary<string, object>>();
+            InitializeDataTable();
+
+            data.DataSource = taskDataTable;
+            data.DataBindingComplete += data_DataBindingComplete;
+        }
+
+        private void InitializeDataTable()
+        {
             taskDataTable.Columns.Add("Title", typeof(string));
             taskDataTable.Columns.Add("Status", typeof(string));
             taskDataTable.Columns.Add("Start Date", typeof(DateTime));
             taskDataTable.Columns.Add("End Date", typeof(DateTime));
-
-            DataTaskTable = taskDataTable; // Initialize DataTaskTable here
-
-            data.DataSource = taskDataTable;
-            data.DataBindingComplete += data_DataBindingComplete;
         }
 
         private void createBtn_Click(object sender, EventArgs e)
@@ -42,31 +43,38 @@ namespace ITEC_104_Project.Controls
             if (taskForm == null)
             {
                 taskForm = new createTaskForm();
-                taskForm.TaskDataTable = taskDataTable;
+                taskForm.TasksList = tasksList;
                 taskForm.FormClosed += (s, args) => { /* Handle form closed event if needed */ };
                 taskForm.ShowDialog();
             }
 
-            taskForm.TaskDataTable = taskDataTable;
+            taskForm.TasksList = tasksList;
             taskForm.ShowDialog();
 
             if (taskForm.DialogResult == DialogResult.OK)
             {
-                if (data.DataSource is DataTable dt)
+                string Title = taskForm.titleTextbox.Text;
+                string status = taskForm.statusOption.SelectedItem?.ToString() ?? string.Empty;
+                DateTime startDate = taskForm.startDateTimePicker.Value;
+                DateTime endDate = taskForm.endDateTimePicker.Value;
+
+                var taskDict = new Dictionary<string, object>
                 {
-                    string Title = taskForm.titleTextbox.Text;
-                    string status = taskForm.statusOption.SelectedItem?.ToString() ?? string.Empty;
-                    DateTime startDate = taskForm.startDateTimePicker.Value;
-                    DateTime endDate = taskForm.endDateTimePicker.Value;
+                    { "Title", Title },
+                    { "Status", status },
+                    { "Start Date", startDate },
+                    { "End Date", endDate }
+                };
 
-                    DataRow newRow = dt.NewRow();
-                    newRow["Title"] = Title;
-                    newRow["Status"] = status;
-                    newRow["Start Date"] = startDate;
-                    newRow["End Date"] = endDate;
+                tasksList.Add(taskDict);
 
-                    dt.Rows.Add(newRow);
-                }
+                DataRow newRow = taskDataTable.NewRow();
+                newRow["Title"] = Title;
+                newRow["Status"] = status;
+                newRow["Start Date"] = startDate;
+                newRow["End Date"] = endDate;
+
+                taskDataTable.Rows.Add(newRow);
             }
         }
 
@@ -76,10 +84,12 @@ namespace ITEC_104_Project.Controls
             {
                 return;
             }
+
             isFormatting = true;
+
             try
             {
-                DataGridViewTextBoxColumn daysPassedColumn = data.Columns["Days Passed"] as DataGridViewTextBoxColumn;
+                DataGridViewTextBoxColumn? daysPassedColumn = data.Columns["Days Passed"] as DataGridViewTextBoxColumn;
 
                 if (daysPassedColumn == null)
                 {
@@ -89,7 +99,7 @@ namespace ITEC_104_Project.Controls
                     data.Columns.Add(daysPassedColumn);
                 }
 
-                DataGridViewTextBoxColumn progressColumn = data.Columns["Progress"] as DataGridViewTextBoxColumn;
+                DataGridViewTextBoxColumn? progressColumn = data.Columns["Progress"] as DataGridViewTextBoxColumn;
 
                 if (progressColumn == null)
                 {
@@ -110,7 +120,6 @@ namespace ITEC_104_Project.Controls
                         TimeSpan duration = endDate - startDate;
                         int totalDays = (int)duration.TotalDays;
 
-                        // Check if totalDays is zero to avoid division by zero
                         if (totalDays > 0)
                         {
                             TimeSpan daysPassedSpan = currentDate - startDate;
@@ -118,10 +127,8 @@ namespace ITEC_104_Project.Controls
 
                             row.Cells["Days Passed"].Value = $"{daysPassed}/{totalDays}";
 
-                            // Calculate progress percentage
                             int progressPercentage = (int)((double)daysPassed / totalDays * 100);
 
-                            // Set progress bar value as a string
                             row.Cells["Progress"].Value = $"{progressPercentage}%";
                         }
                         else
@@ -149,9 +156,8 @@ namespace ITEC_104_Project.Controls
 
             try
             {
-                string? statusValue = e.Value?.ToString(); // Use '?' for nullability
+                string? statusValue = e.Value?.ToString() ?? string.Empty;
 
-                // Customize cell appearance based on the status
                 switch (statusValue)
                 {
                     case "Low Priority":
@@ -166,10 +172,7 @@ namespace ITEC_104_Project.Controls
                         e.CellStyle.BackColor = Color.Green;
                         break;
 
-                    // Add more cases for other status values if needed
-
                     default:
-                        // Reset to default cell style
                         e.CellStyle.BackColor = data.DefaultCellStyle.BackColor;
                         break;
                 }
@@ -182,29 +185,36 @@ namespace ITEC_104_Project.Controls
 
         private void srchBTN_Click(object sender, EventArgs e)
         {
-            // Add a debug statement to check if the method is being called
             Console.WriteLine("Search button clicked.");
 
             string searchTerm = srchTXTBox.Text.Trim();
 
-            // Add a debug statement to check the value of searchTerm
             Console.WriteLine($"Search term: {searchTerm}");
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 var filteredRows = taskDataTable.AsEnumerable()
-                    .Where(row => row.Field<string>("Title").Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                    .Where(row =>
+                    {
+                        DataRow row1 = row;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                        return row1.Field<string>(ColumnName).Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                    })
                     .CopyToDataTable();
 
                 data.DataSource = filteredRows;
+
                 Console.WriteLine("DataSource set to filtered rows.");
             }
             else
             {
                 data.DataSource = taskDataTable;
+
                 Console.WriteLine("DataSource set to original data.");
             }
         }
+
         private void deleteSelectedRows()
         {
             if (data.SelectedRows.Count > 0)
@@ -223,9 +233,9 @@ namespace ITEC_104_Project.Controls
                     for (int i = selectedIndices.Count - 1; i >= 0; i--)
                     {
                         int rowIndex = selectedIndices[i];
-                        DataRowView selectedDataRowView = data.Rows[rowIndex].DataBoundItem as DataRowView;
+                        DataRowView? selectedDataRowView = data.Rows[rowIndex].DataBoundItem as DataRowView;
 
-                        if (selectedDataRowView != null)
+                        if (selectedDataRowView != null && selectedDataRowView.Row != null)
                         {
                             DataRow selectedDataRow = selectedDataRowView.Row;
                             taskDataTable.Rows.Remove(selectedDataRow);
@@ -242,7 +252,6 @@ namespace ITEC_104_Project.Controls
             }
         }
 
-
         private void delBTN_Click(object sender, EventArgs e)
         {
             deleteSelectedRows();
@@ -250,7 +259,7 @@ namespace ITEC_104_Project.Controls
 
         private void editBTN_Click(object sender, EventArgs e)
         {
-
+            // Add your edit logic here if needed
         }
     }
 }

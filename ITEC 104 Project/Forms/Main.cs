@@ -17,11 +17,7 @@ namespace ITEC_104_Project
     {
         Controls.ucProject Dashboard2 = new Controls.ucProject();
         Controls.ucCalendar Dashboard3 = new Controls.ucCalendar();
-        public Main()
-        {
-            InitializeComponent();
-
-        }
+        public Main() => InitializeComponent();
 
         private void Main_Load(object sender, EventArgs e)
         {

@@ -115,7 +115,6 @@ namespace ITEC_104_Project
         private void ShowEventForm()
         {
             createEventForm eventForm = new createEventForm();
-            eventForm.EventAdded += EventForm_EventAdded;
             eventForm.ShowDialog();
         }
 

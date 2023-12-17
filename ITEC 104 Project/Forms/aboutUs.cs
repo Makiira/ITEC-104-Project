@@ -12,9 +12,6 @@ namespace ITEC_104_Project.Forms
 {
     public partial class aboutUs : Form
     {
-        public aboutUs()
-        {
-            InitializeComponent();
-        }
+        public aboutUs() => InitializeComponent();
     }
 }

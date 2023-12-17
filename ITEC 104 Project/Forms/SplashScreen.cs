@@ -4,10 +4,7 @@ namespace ITEC_104_Project
 {
     public partial class splashScreen : KryptonForm
     {
-        public splashScreen()
-        {
-            InitializeComponent();
-        }
+        public splashScreen() => InitializeComponent();
         int start = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {

@@ -15,10 +15,7 @@ namespace ITEC_104_Project.Controls
     {
 
         Calendar cal = new Calendar();
-        public ucCalendar()
-        {
-            InitializeComponent();
-        }
+        public ucCalendar() => InitializeComponent();
 
         private void Control3_Load(object sender, EventArgs e)
         {

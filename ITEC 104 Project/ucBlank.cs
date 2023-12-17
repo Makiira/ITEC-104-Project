@@ -12,9 +12,6 @@ namespace ITEC_104_Project
 {
     public partial class ucBlank : UserControl
     {
-        public ucBlank()
-        {
-            InitializeComponent();
-        }
+        public ucBlank() => InitializeComponent();
     }
 }

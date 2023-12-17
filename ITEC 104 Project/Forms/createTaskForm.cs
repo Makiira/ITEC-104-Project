@@ -1,4 +1,6 @@
-﻿using System;
+﻿// createTaskForm class
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Krypton.Toolkit;
@@ -7,35 +9,31 @@ namespace ITEC_104_Project.Forms
 {
     public partial class createTaskForm : KryptonForm
     {
-        public DataTable? TaskDataTable
+        public List<Dictionary<string, object>>? TasksList
         {
-            get { return taskDataTable; }
-            set { taskDataTable = value; }
+            get { return tasksList; }
+            set { tasksList = value; }
         }
 
-        private DataTable? taskDataTable;
+        private List<Dictionary<string, object>>? tasksList;
         private int rowIndex = -1;
 
-        public createTaskForm()
-        {
-            InitializeComponent();
-        }
+        public createTaskForm() => InitializeComponent();
 
         public void LoadTaskData(int index)
         {
-            if (index >= 0 && index < taskDataTable?.Rows.Count)
+            if (index >= 0 && index < tasksList?.Count)
             {
                 rowIndex = index;
-                titleTextbox.Text = taskDataTable.Rows[index]["Title"].ToString();
-                statusOption.SelectedItem = taskDataTable.Rows[index]["Status"].ToString();
-                startDateTimePicker.Value = (DateTime)taskDataTable.Rows[index]["Start Date"];
-                endDateTimePicker.Value = (DateTime)taskDataTable.Rows[index]["End Date"];
+                titleTextbox.Text = tasksList[index]["Title"].ToString();
+                statusOption.SelectedItem = tasksList[index]["Status"].ToString();
+                startDateTimePicker.Value = (DateTime)tasksList[index]["Start Date"];
+                endDateTimePicker.Value = (DateTime)tasksList[index]["End Date"];
             }
         }
 
         private void ctfAddBtn_Click(object sender, EventArgs e)
         {
-            // Validate input before adding a new row
             if (string.IsNullOrWhiteSpace(titleTextbox.Text))
             {
                 MessageBox.Show("Please enter a valid title.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,7 +48,6 @@ namespace ITEC_104_Project.Forms
 
             try
             {
-                // Validate the date range
                 DateTime startDate = startDateTimePicker.Value;
                 DateTime endDate = endDateTimePicker.Value;
 
@@ -62,23 +59,23 @@ namespace ITEC_104_Project.Forms
 
                 if (rowIndex != -1)
                 {
-                    // Editing existing row
-                    DataRow editedRow = taskDataTable?.Rows[rowIndex] ?? throw new InvalidOperationException("TaskDataTable cannot be null.");
-                    editedRow["Title"] = titleTextbox.Text;
-                    editedRow["Status"] = statusOption.SelectedItem?.ToString() ?? "DefaultStatus";
-                    editedRow["Start Date"] = startDate;
-                    editedRow["End Date"] = endDate;
+                    Dictionary<string, object> editedTask = tasksList?[rowIndex] ?? throw new InvalidOperationException("TasksList cannot be null.");
+                    editedTask["Title"] = titleTextbox.Text;
+                    editedTask["Status"] = statusOption.SelectedItem?.ToString() ?? "DefaultStatus";
+                    editedTask["Start Date"] = startDate;
+                    editedTask["End Date"] = endDate;
                 }
                 else
                 {
-                    // Adding new row
-                    DataRow newRow = taskDataTable?.NewRow() ?? throw new InvalidOperationException("TaskDataTable cannot be null.");
-                    newRow["Title"] = titleTextbox.Text;
-                    newRow["Status"] = statusOption.SelectedItem?.ToString() ?? "DefaultStatus";
-                    newRow["Start Date"] = startDate;
-                    newRow["End Date"] = endDate;
+                    var taskDict = new Dictionary<string, object>
+                    {
+                        { "Title", titleTextbox.Text },
+                        { "Status", statusOption.SelectedItem?.ToString() ?? "DefaultStatus" },
+                        { "Start Date", startDate },
+                        { "End Date", endDate }
+                    };
 
-                    taskDataTable?.Rows.Add(newRow);
+                    tasksList?.Add(taskDict);
                 }
 
                 this.DialogResult = DialogResult.OK;

@@ -6,10 +6,7 @@ namespace ITEC_104_Project
 {
     public partial class ucDays : UserControl
     {
-        public ucDays()
-        {
-            InitializeComponent();
-        }
+        public ucDays() => InitializeComponent();
 
         private void ucDays_Load(object sender, EventArgs e)
         {
@@ -34,7 +31,6 @@ namespace ITEC_104_Project
         private void ShowEventForm()
         {
             createEventForm cef = new createEventForm();
-            cef.EventAdded += Cef_EventAdded;
             cef.ShowDialog();
         }
 
