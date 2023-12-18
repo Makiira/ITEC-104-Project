@@ -52,10 +52,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Poppins Black", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(313, 146);
+            label1.Font = new Font("Poor Richard", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 190);
             label1.Name = "label1";
-            label1.Size = new Size(196, 58);
+            label1.Size = new Size(179, 37);
             label1.TabIndex = 1;
             label1.Text = "WELCOME";
             label1.Click += label1_Click;
@@ -92,10 +92,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Poppins Black", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(254, 188);
+            label3.Font = new Font("Poor Richard", 30F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(12, 227);
             label3.Name = "label3";
-            label3.Size = new Size(255, 70);
+            label3.Size = new Size(218, 47);
             label3.TabIndex = 4;
             label3.Text = "TASK TUNE";
             // 
