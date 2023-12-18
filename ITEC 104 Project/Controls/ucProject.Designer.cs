@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel7 = new Panel();
-            editBTN = new Button();
             delBTN = new Button();
             srchTXTBox = new TextBox();
             srchBTN = new Button();
@@ -43,7 +42,6 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(editBTN);
             panel7.Controls.Add(delBTN);
             panel7.Controls.Add(srchTXTBox);
             panel7.Controls.Add(srchBTN);
@@ -55,26 +53,13 @@
             panel7.Size = new Size(911, 53);
             panel7.TabIndex = 1;
             // 
-            // editBTN
-            // 
-            editBTN.BackColor = Color.Transparent;
-            editBTN.FlatAppearance.BorderSize = 0;
-            editBTN.FlatStyle = FlatStyle.Flat;
-            editBTN.Font = new Font("Poppins", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            editBTN.Location = new Point(633, 0);
-            editBTN.Name = "editBTN";
-            editBTN.Size = new Size(120, 50);
-            editBTN.TabIndex = 9;
-            editBTN.Text = "EDIT";
-            editBTN.UseVisualStyleBackColor = false;
-            // 
             // delBTN
             // 
             delBTN.BackColor = Color.Transparent;
             delBTN.FlatAppearance.BorderSize = 0;
             delBTN.FlatStyle = FlatStyle.Flat;
             delBTN.Font = new Font("Poppins", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            delBTN.Location = new Point(184, 0);
+            delBTN.Location = new Point(75, 0);
             delBTN.Name = "delBTN";
             delBTN.Size = new Size(120, 50);
             delBTN.TabIndex = 8;
@@ -95,7 +80,7 @@
             srchBTN.FlatAppearance.BorderSize = 0;
             srchBTN.FlatStyle = FlatStyle.Flat;
             srchBTN.Font = new Font("Poppins", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            srchBTN.Location = new Point(77, 0);
+            srchBTN.Location = new Point(184, 0);
             srchBTN.Name = "srchBTN";
             srchBTN.Size = new Size(120, 50);
             srchBTN.TabIndex = 6;
@@ -139,18 +124,18 @@
             data.RowTemplate.DefaultCellStyle.Padding = new Padding(5, 0, 5, 0);
             data.RowTemplate.Height = 25;
             data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data.Size = new Size(851, 484);
+            data.Size = new Size(868, 578);
             data.TabIndex = 2;
             // 
-            // Control2
+            // ucProject
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 234, 220);
             Controls.Add(data);
             Controls.Add(panel7);
-            Name = "Control2";
-            Size = new Size(911, 602);
+            Name = "ucProject";
+            Size = new Size(911, 670);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonSeparator1).EndInit();
@@ -166,6 +151,5 @@
         private TextBox srchTXTBox;
         private Button srchBTN;
         private Button delBTN;
-        private Button editBTN;
     }
 }

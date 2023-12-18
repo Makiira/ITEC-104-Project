@@ -59,7 +59,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(847, 592);
+            panel1.Size = new Size(911, 670);
             panel1.TabIndex = 4;
             // 
             // calendarPrevButton
@@ -69,7 +69,7 @@
             calendarPrevButton.FlatStyle = FlatStyle.Flat;
             calendarPrevButton.Font = new Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point);
             calendarPrevButton.ForeColor = Color.White;
-            calendarPrevButton.Location = new Point(18, 557);
+            calendarPrevButton.Location = new Point(18, 625);
             calendarPrevButton.Name = "calendarPrevButton";
             calendarPrevButton.Size = new Size(95, 32);
             calendarPrevButton.TabIndex = 13;
@@ -94,7 +94,7 @@
             calendarNextButton.FlatStyle = FlatStyle.Flat;
             calendarNextButton.Font = new Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point);
             calendarNextButton.ForeColor = Color.White;
-            calendarNextButton.Location = new Point(119, 557);
+            calendarNextButton.Location = new Point(119, 625);
             calendarNextButton.Name = "calendarNextButton";
             calendarNextButton.Size = new Size(65, 32);
             calendarNextButton.TabIndex = 11;
@@ -106,7 +106,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(735, 33);
+            label7.Location = new Point(749, 33);
             label7.Name = "label7";
             label7.Size = new Size(81, 25);
             label7.TabIndex = 10;
@@ -117,7 +117,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ControlText;
-            label6.Location = new Point(630, 33);
+            label6.Location = new Point(646, 33);
             label6.Name = "label6";
             label6.Size = new Size(59, 25);
             label6.TabIndex = 9;
@@ -127,7 +127,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(505, 33);
+            label5.Location = new Point(519, 33);
             label5.Name = "label5";
             label5.Size = new Size(81, 25);
             label5.TabIndex = 8;
@@ -137,7 +137,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(381, 33);
+            label4.Location = new Point(393, 33);
             label4.Name = "label4";
             label4.Size = new Size(101, 25);
             label4.TabIndex = 7;
@@ -147,7 +147,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(268, 33);
+            label3.Location = new Point(284, 33);
             label3.Name = "label3";
             label3.Size = new Size(75, 25);
             label3.TabIndex = 6;
@@ -157,7 +157,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(155, 33);
+            label2.Location = new Point(166, 33);
             label2.Name = "label2";
             label2.Size = new Size(72, 25);
             label2.TabIndex = 5;
@@ -178,8 +178,9 @@
             daycontainer.BackColor = Color.White;
             daycontainer.Location = new Point(21, 61);
             daycontainer.Name = "daycontainer";
-            daycontainer.Size = new Size(803, 490);
+            daycontainer.Size = new Size(844, 542);
             daycontainer.TabIndex = 3;
+            daycontainer.Paint += daycontainer_Paint;
             // 
             // Calendar
             // 
@@ -187,7 +188,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "Calendar";
-            Size = new Size(847, 592);
+            Size = new Size(911, 670);
             Load += Calendar_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

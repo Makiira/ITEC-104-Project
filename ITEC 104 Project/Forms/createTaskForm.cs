@@ -1,5 +1,4 @@
-﻿// createTaskForm class
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -7,18 +6,21 @@ using Krypton.Toolkit;
 
 namespace ITEC_104_Project.Forms
 {
-    public partial class createTaskForm : KryptonForm
+    public partial class createTaskForm : Form
     {
+        private List<Dictionary<string, object>>? tasksList;
+        private int rowIndex = -1;
+
+        public createTaskForm()
+        {
+            InitializeComponent();
+        }
+
         public List<Dictionary<string, object>>? TasksList
         {
             get { return tasksList; }
             set { tasksList = value; }
         }
-
-        private List<Dictionary<string, object>>? tasksList;
-        private int rowIndex = -1;
-
-        public createTaskForm() => InitializeComponent();
 
         public void LoadTaskData(int index)
         {
@@ -34,20 +36,20 @@ namespace ITEC_104_Project.Forms
 
         private void ctfAddBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(titleTextbox.Text))
-            {
-                MessageBox.Show("Please enter a valid title.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (statusOption.SelectedItem == null)
-            {
-                MessageBox.Show("Please select a valid status.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             try
             {
+                if (string.IsNullOrWhiteSpace(titleTextbox.Text))
+                {
+                    MessageBox.Show("Please enter a valid title.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (statusOption.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a valid status.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 DateTime startDate = startDateTimePicker.Value;
                 DateTime endDate = endDateTimePicker.Value;
 
@@ -78,6 +80,8 @@ namespace ITEC_104_Project.Forms
                     tasksList?.Add(taskDict);
                 }
 
+                // Log statements for debugging
+                Console.WriteLine("Setting DialogResult to OK");
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
@@ -86,13 +90,10 @@ namespace ITEC_104_Project.Forms
             }
             finally
             {
+                // Log statements for debugging
+                Console.WriteLine("Closing the form");
                 this.Close();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

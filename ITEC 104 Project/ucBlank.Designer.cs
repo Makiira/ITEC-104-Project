@@ -36,7 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Name = "ucBlank";
-            Size = new Size(108, 83);
+            Size = new Size(113, 102);
             ResumeLayout(false);
         }
 

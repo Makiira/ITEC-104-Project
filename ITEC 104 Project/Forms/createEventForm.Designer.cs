@@ -51,16 +51,21 @@
             eventTextBox.Name = "eventTextBox";
             eventTextBox.Size = new Size(185, 23);
             eventTextBox.TabIndex = 1;
-            eventTextBox.TextChanged += eventTextBox_TextChanged;
+            //eventTextBox.TextChanged += eventTextBox_TextChanged;
             // 
             // addBTN
             // 
+            addBTN.BackColor = Color.FromArgb(85, 124, 211);
+            addBTN.FlatAppearance.BorderSize = 0;
+            addBTN.FlatStyle = FlatStyle.Flat;
+            addBTN.Font = new Font("Century", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            addBTN.ForeColor = Color.White;
             addBTN.Location = new Point(78, 81);
             addBTN.Name = "addBTN";
             addBTN.Size = new Size(136, 29);
             addBTN.TabIndex = 2;
-            addBTN.Text = "Add Event";
-            addBTN.UseVisualStyleBackColor = true;
+            addBTN.Text = "ADD EVENT";
+            addBTN.UseVisualStyleBackColor = false;
             addBTN.Click += addBTN_Click;
             // 
             // createEventForm

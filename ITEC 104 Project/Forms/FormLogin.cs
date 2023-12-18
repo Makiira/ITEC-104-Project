@@ -10,25 +10,14 @@ namespace ITEC_104_Project
     {
 
         public FormLogin() => InitializeComponent();
-
-        private void loginButton1_Click(object sender, EventArgs e)
+        private void loginButton1_Click_1(object sender, EventArgs e)
         {
             Main m = new Main();
             m.Show();
             this.Hide();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void emailTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private void extiButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

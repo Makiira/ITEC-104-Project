@@ -191,27 +191,23 @@ namespace ITEC_104_Project.Controls
 
             Console.WriteLine($"Search term: {searchTerm}");
 
-            if (!string.IsNullOrEmpty(searchTerm))
+            var matchingRows = taskDataTable.AsEnumerable()
+                .Where(row => row.Field<string>(ColumnName).Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+
+            if (matchingRows.Length > 0)
             {
-                var filteredRows = taskDataTable.AsEnumerable()
-                    .Where(row =>
-                    {
-                        DataRow row1 = row;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-                        return row1.Field<string>(ColumnName).Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-                    })
-                    .CopyToDataTable();
-
+                var filteredRows = matchingRows.CopyToDataTable();
                 data.DataSource = filteredRows;
-
                 Console.WriteLine("DataSource set to filtered rows.");
             }
             else
             {
                 data.DataSource = taskDataTable;
-
                 Console.WriteLine("DataSource set to original data.");
+
+                // Display a message if no matching rows were found
+                MessageBox.Show($"No rows found with the search term '{searchTerm}'.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

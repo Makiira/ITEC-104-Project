@@ -63,7 +63,7 @@
             Menu.Dock = DockStyle.Left;
             Menu.Location = new Point(0, 0);
             Menu.Name = "Menu";
-            Menu.Size = new Size(187, 677);
+            Menu.Size = new Size(187, 745);
             Menu.TabIndex = 0;
             // 
             // iconButton3
@@ -144,7 +144,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(757, 3);
+            button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(108, 25);
             button1.TabIndex = 0;
@@ -175,14 +175,14 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(187, 75);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(911, 602);
+            mainPanel.Size = new Size(911, 670);
             mainPanel.TabIndex = 2;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 677);
+            ClientSize = new Size(1098, 745);
             Controls.Add(mainPanel);
             Controls.Add(panel1);
             Controls.Add(Menu);

@@ -36,17 +36,17 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(723, 602);
+            panel2.Size = new Size(911, 670);
             panel2.TabIndex = 5;
             // 
-            // Control3
+            // ucCalendar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 234, 220);
             Controls.Add(panel2);
-            Name = "Control3";
-            Size = new Size(911, 602);
+            Name = "ucCalendar";
+            Size = new Size(911, 670);
             Load += Control3_Load;
             ResumeLayout(false);
         }

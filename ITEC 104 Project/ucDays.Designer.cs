@@ -30,6 +30,7 @@
         {
             lbDays = new Label();
             nameLabel = new Label();
+            eventLabel = new Label();
             SuspendLayout();
             // 
             // lbDays
@@ -51,14 +52,25 @@
             nameLabel.Size = new Size(0, 16);
             nameLabel.TabIndex = 2;
             // 
+            // eventLabel
+            // 
+            eventLabel.AutoSize = true;
+            eventLabel.Font = new Font("Century", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            eventLabel.Location = new Point(9, 56);
+            eventLabel.Name = "eventLabel";
+            eventLabel.Size = new Size(23, 15);
+            eventLabel.TabIndex = 3;
+            eventLabel.Text = "    ";
+            // 
             // ucDays
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(eventLabel);
             Controls.Add(nameLabel);
             Controls.Add(lbDays);
             Name = "ucDays";
-            Size = new Size(108, 83);
+            Size = new Size(113, 102);
             Load += ucDays_Load;
             Click += ucDays_Click;
             ResumeLayout(false);
@@ -69,5 +81,6 @@
 
         private Label lbDays;
         private Label nameLabel;
+        private Label eventLabel;
     }
 }
