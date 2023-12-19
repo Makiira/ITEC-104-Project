@@ -219,22 +219,17 @@ namespace ITEC_104_Project.Controls
 
                 if (result == DialogResult.Yes)
                 {
-                    List<int> selectedIndices = new List<int>();
-
                     foreach (DataGridViewRow selectedRow in data.SelectedRows)
                     {
-                        selectedIndices.Add(selectedRow.Index);
-                    }
-
-                    for (int i = selectedIndices.Count - 1; i >= 0; i--)
-                    {
-                        int rowIndex = selectedIndices[i];
-                        DataRowView? selectedDataRowView = data.Rows[rowIndex].DataBoundItem as DataRowView;
-
-                        if (selectedDataRowView != null && selectedDataRowView.Row != null)
+                        if (!selectedRow.IsNewRow) // Skip the new row if present
                         {
-                            DataRow selectedDataRow = selectedDataRowView.Row;
-                            taskDataTable.Rows.Remove(selectedDataRow);
+                            DataRowView selectedDataRowView = selectedRow.DataBoundItem as DataRowView;
+
+                            if (selectedDataRowView != null && selectedDataRowView.Row != null)
+                            {
+                                DataRow selectedDataRow = selectedDataRowView.Row;
+                                taskDataTable.Rows.Remove(selectedDataRow);
+                            }
                         }
                     }
 
@@ -247,6 +242,7 @@ namespace ITEC_104_Project.Controls
                 MessageBox.Show("Please select at least one row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private void delBTN_Click(object sender, EventArgs e)
         {
